@@ -1,0 +1,2 @@
+GET http://localhost:3000/filter?filter=96&column=code
+content-type: application/json

@@ -1,0 +1,2 @@
+GET http://localhost:3000/history/2025-05-04
+content-type: application/json

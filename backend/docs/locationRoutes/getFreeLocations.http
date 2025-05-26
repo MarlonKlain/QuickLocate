@@ -1,0 +1,2 @@
+GET http://localhost:3000/location/free
+content-type: application/json

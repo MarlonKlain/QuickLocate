@@ -1,0 +1,11 @@
+POST http://localhost:3000/login
+content-type: application/json
+
+# {
+#     "username": "marlonklain",
+#     "password": "Marlon0971!"
+# }
+{
+    "username": "Novo Usuário 2",
+    "password": "Abcdefg1!"
+}

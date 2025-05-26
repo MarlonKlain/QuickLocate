@@ -1,0 +1,8 @@
+PUT  http://localhost:3000/item/update-location
+content-type: application/json
+
+{
+    "code": "057229853",
+    "newLocation": "22222"
+}
+
