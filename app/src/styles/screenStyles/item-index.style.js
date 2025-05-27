@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { COLORS } from "../../utils/colors";
 import { FONTS } from "../../utils/fonts";
 import { logoutButtonStyle } from "../componentStyles/shared/LogoutButton.shared";
-import { containerStyle } from "../componentStyles/shared/container.shared.styles";
+import { containerStyle } from "../componentStyles/shared/Container.shared.styles";
 
 export const styles = StyleSheet.create({
   container: {
@@ -70,6 +70,7 @@ export const styles = StyleSheet.create({
     marginVertical: 20,
     flex: 0.05,
     flexDirection: "row",
+    alignSelf: "center",
   },
   resetFilterText: {
     textAlign: "center",
