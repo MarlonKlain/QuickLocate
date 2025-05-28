@@ -7,15 +7,28 @@ import FlatListComponent from "../../src/components/FlatList/FlatListComponent";
 import HistoryChangeByDateComponent from "../../src/components/FlatList/FlatListChildren/HistoryChangeByDateComponent";
 import BackButton from "../../src/components/BackButton";
 import { styles } from "../../src/styles/screenStyles/[date]";
+import { showToast } from "../../src/components/Toast/Toast";
 export default function HistoryChangeByDate() {
   const { timestamp } = useLocalSearchParams();
   const [historyChangeByDate, setHistoryChangeByDate] = useState([]);
 
+  const loadData = async (timestamp) => {
+    try {
+      const response = await getHistoryChangeByDate(
+        formatTheHistoryWithoutTime(timestamp)
+      );
+      if (response.success) {
+        setHistoryChangeByDate(response.data);
+      } else {
+        showToast("error", response.message);
+      }
+    } catch (error) {
+      throw new Error(`Failed to load data. Error: ${error.message}`);
+    }
+  };
   useEffect(() => {
-    getHistoryChangeByDate(formatTheHistoryWithoutTime(timestamp)).then(
-      (response) => setHistoryChangeByDate(response.data)
-    );
-  }, []);
+    loadData(timestamp);
+  }, [timestamp]);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

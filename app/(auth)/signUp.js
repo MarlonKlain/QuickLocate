@@ -16,6 +16,21 @@ export default function signUp() {
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const { register } = useContext(AuthContext);
 
+  /**
+   * Handles user registration by collecting user details, sending them to the register function,
+   * and displaying appropriate toast notifications based on the response.
+   *
+   * @async
+   * @function handleRegister
+   * @param {string} firstName - The user's first name.
+   * @param {string} lastName - The user's last name.
+   * @param {string} username - The user's chosen username.
+   * @param {string} email - The user's email address.
+   * @param {string} password - The user's password.
+   * @param {string} passwordConfirm - Confirmation of the user's password.
+   * @returns {Promise<void>} Resolves when registration is complete or an error is handled.
+   * @throws {Error} Throws an error if registration fails unexpectedly.
+   */
   async function handleRegister(
     firstName,
     lastName,
@@ -37,8 +52,10 @@ export default function signUp() {
       const response = await register(userData);
       if (response.errorMessage) {
         showToast("error", response.errorMessage);
+        return;
       } else {
-        return { message: "The register was successful." };
+        showToast("success", "Registrations was successful!. ");
+        return;
       }
     } catch (error) {
       throw new Error(`Failed to register. Error: ${error.message}`);

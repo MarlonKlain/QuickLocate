@@ -15,6 +15,7 @@ import ItemListComponent from "../../src/components/FlatList/FlatListChildren/It
 import { getAllItemsAndFreeLocation } from "../../src/service/item.service";
 import { filter } from "../../src/service/filter.service";
 import { AuthContext } from "../../src/contexts/Auth.context";
+import { showToast } from "../../src/components/Toast/Toast";
 
 export default function Items() {
   const [itemsList, setItemsList] = useState([]);
@@ -27,29 +28,100 @@ export default function Items() {
   const [sorterValue, setSorterValue] = useState(null);
   const { logout } = useContext(AuthContext);
 
-  function cleanFilters() {
-    getAllItemsAndFreeLocation().then((response) =>
-      setItemsList(response.data)
-    );
-    setSearch("");
-    setColumn("description");
-    setSorter("");
-    setFilterValue(null);
-    setSorterValue(null);
+  /**
+   * Resets all filter and sorting states to their default values and reloads the items list.
+   * Fetches all items and free locations, updates the UI state accordingly, and handles errors.
+   *
+   * @async
+   * @function cleanFilters
+   * @returns {Promise<void>} Resolves when filters are reset and items are reloaded.
+   * @throws {Error} Throws an error if the filters cannot be reset.
+   */
+
+  async function cleanFilters() {
+    try {
+      const response = await getAllItemsAndFreeLocation();
+      if (response.success) {
+        setItemsList(response.data);
+        setSearch("");
+        setColumn("description");
+        setSorter("");
+        setFilterValue(null);
+        setSorterValue(null);
+      } else {
+        showToast("error", response.message);
+      }
+    } catch (error) {
+      throw new Error(`Failed to reset the filters. Error: ${error.message}`);
+    }
   }
 
+  /**
+   * Asynchronously loads the list of items and free locations.
+   * Fetches data using `getAllItemsAndFreeLocation` and updates the items list state if successful.
+   * Displays an error toast if the response is unsuccessful.
+   * Throws an error if the request fails.
+   * Used this method to prevent to use async syntax inside the useEffect
+   *
+   * @async
+   * @function
+   * @returns {Promise<void>} Resolves when the data is loaded and state is updated.
+   */
+  const loadData = async () => {
+    try {
+      const response = await getAllItemsAndFreeLocation();
+      if (response.success) {
+        setItemsList(response.data);
+        return;
+      } else {
+        showToast("error", response.message);
+        return;
+      }
+    } catch (error) {
+      throw new Error(
+        `Failed to load the list of items and free locations. Error: ${error.message}`
+      );
+    }
+  };
+
+  /**
+   * Loads and filters items based on the provided search criteria, column, and sorter.
+   * If a search term is provided, it calls the `filter` function and updates the items list.
+   * Displays an error toast if the filter operation fails.
+   *
+   * @async
+   * @function
+   * @param {string} search - The search term to filter items.
+   * @param {string} column - The column to apply the filter on.
+   * @param {string} sorter - The sorting criteria.
+   * @returns {Promise<void>} Resolves when the filtering and state update are complete.
+   * @throws {Error} Throws an error if the filtering operation fails.
+   */
+  const loadFilter = async (search, column, sorter) => {
+    try {
+      if (search) {
+        const response = await filter(search, column, sorter);
+        if (response.success) {
+          setItemsList(response.data);
+          return;
+        } else {
+          showToast("error", response.message);
+          return;
+        }
+      }
+    } catch (error) {
+      throw new Error(
+        `Failed while filtering the result. Error: ${error.message}`
+      );
+    }
+  };
+
   useEffect(() => {
-    getAllItemsAndFreeLocation().then((response) =>
-      setItemsList(response.data)
-    );
+    loadData();
   }, []);
 
   useEffect(() => {
-    if (search) {
-      filter(search, column, sorter).then((response) =>
-        setItemsList(response.data)
-      );
-    }
+    loadFilter(search, column, sorter);
   }, [search, column, sorter]);
 
   return (

@@ -1,4 +1,3 @@
-// Login.js
 import { Text, View, SafeAreaView } from "react-native";
 import { useState, useContext } from "react";
 import Input from "../src/components/Input";
@@ -14,18 +13,28 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const { login } = useContext(AuthContext);
 
+  /**
+   * Handles the user login process.
+   * Sets the loading state, attempts to log in with the provided username and password,
+   * displays a toast notification based on the result, and manages loading state cleanup.
+   *
+   * @async
+   * @function
+   * @returns {Promise<void>} Resolves when the login process is complete.
+   */
   async function handleLogin() {
     setLoading(true);
     try {
       const response = await login(username, password);
       if (response.errorMessage) {
         showToast("error", response.errorMessage);
+        return;
       } else {
         showToast("success", "The login was successful. ");
         return;
       }
     } catch (error) {
-      console.error("Login Error:", error);
+      return error.message;
     } finally {
       setLoading(false);
     }

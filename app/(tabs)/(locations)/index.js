@@ -6,13 +6,36 @@ import LocationListComponent from "../../src/components/FlatList/FlatListChildre
 import { getLocations } from "../../src/service/location.service";
 import Button from "../../src/components/Button";
 import { AuthContext } from "../../src/contexts/Auth.context";
+import { showToast } from "../../src/components/Toast/Toast";
 
 export default function Locations() {
   const [locationsList, setLocationsList] = useState([]);
   const { logout } = useContext(AuthContext);
 
+  /**
+   * Asynchronously loads location data and updates the locations list state.
+   * Displays an error toast if the response is unsuccessful.
+   * Throws an error if the data loading process fails.
+   *
+   * @async
+   * @function loadData
+   * @returns {Promise<void>} Resolves when the data is loaded and state is updated.
+   */
+  const loadData = async () => {
+    try {
+      const response = await getLocations();
+      if (response.success) {
+        setLocationsList(response.data);
+      } else {
+        showToast("error", response.message);
+      }
+    } catch (error) {
+      throw new Error(`Failed to load data. Error: ${error.message}`);
+    }
+  };
+
   useEffect(() => {
-    getLocations().then((response) => setLocationsList(response.data));
+    loadData();
   }, []);
 
   return (
