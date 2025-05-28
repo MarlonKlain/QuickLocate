@@ -1,3 +1,16 @@
+/**
+ * Layout component for the main tab navigation using Expo Router.
+ *
+ * Renders three tabs: Items, Locations, and History, each with custom icons and active tint color.
+ * - Items: Uses Feather "box" icon.
+ * - Locations: Uses MaterialIcons "location-pin" icon.
+ * - History: Uses FontAwesome5 "history" icon.
+ *
+ * All tabs hide the header and use the primary color from COLORS when active.
+ *
+ * @component
+ * @returns {JSX.Element} The tab navigator layout for the app.
+ */
 import { Tabs } from "expo-router";
 import { Feather, MaterialIcons, FontAwesome5 } from "@expo/vector-icons";
 import { COLORS } from "../src/utils/colors";

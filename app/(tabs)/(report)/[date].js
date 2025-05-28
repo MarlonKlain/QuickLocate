@@ -12,6 +12,17 @@ export default function HistoryChangeByDate() {
   const { timestamp } = useLocalSearchParams();
   const [historyChangeByDate, setHistoryChangeByDate] = useState([]);
 
+  /**
+   * Asynchronously loads history change data for a given timestamp.
+   * Fetches data using `getHistoryChangeByDate` after formatting the timestamp,
+   * updates state if successful, or shows an error toast otherwise.
+   * Throws an error if the request fails.
+   *
+   * @async
+   * @param {number|string|Date} timestamp - The timestamp to fetch history changes for.
+   * @returns {Promise<void>} Resolves when data is loaded and state is updated.
+   * @throws {Error} If the data loading process fails.
+   */
   const loadData = async (timestamp) => {
     try {
       const response = await getHistoryChangeByDate(
@@ -26,6 +37,7 @@ export default function HistoryChangeByDate() {
       throw new Error(`Failed to load data. Error: ${error.message}`);
     }
   };
+
   useEffect(() => {
     loadData(timestamp);
   }, [timestamp]);

@@ -1,3 +1,13 @@
+/**
+ * Root layout component for the application.
+ *
+ * - Loads custom Roboto fonts asynchronously using `useFonts`.
+ * - Hides the splash screen once fonts are loaded or if an error occurs.
+ * - Renders the authentication provider, app router, and toast notifications.
+ * - Returns `null` (renders nothing) while fonts are loading and no error has occurred.
+ *
+ * @returns {JSX.Element|null} The layout containing providers and app content, or `null` while loading fonts.
+ */
 // layout.js
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";

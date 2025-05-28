@@ -1,5 +1,13 @@
 import { getLocalData } from "../localStorage/asyncStorage";
 
+/**
+ * Fetches all items and available free locations from the server.
+ *
+ * @async
+ * @function
+ * @returns {Promise<{success: boolean, data?: any, message?: string}>}
+ *   An object containing the success status, data if successful, or an error message if failed.
+ */
 export async function getAllItemsAndFreeLocation() {
   try {
     const token = await getLocalData("token");
@@ -33,6 +41,15 @@ export async function getAllItemsAndFreeLocation() {
   }
 }
 
+/**
+ * Retrieves an item by its code from the server.
+ *
+ * @async
+ * @function getItemByCode
+ * @param {string} code - The unique code of the item to retrieve.
+ * @returns {Promise<{success: boolean, data?: any, message?: string}>}
+ * An object indicating the success status, the item data if successful, or an error message if failed.
+ */
 export async function getItemByCode(code) {
   try {
     const token = await getLocalData("token");
@@ -65,6 +82,17 @@ export async function getItemByCode(code) {
   }
 }
 
+/**
+ * Updates the location of an item identified by its code.
+ *
+ * Sends a PUT request to the server to update the item's location.
+ *
+ * @async
+ * @param {string} code - The unique code identifying the item.
+ * @param {string} newLocation - The new location to assign to the item.
+ * @returns {Promise<{success: boolean, data?: any, message?: string}>}
+ * An object indicating the success status, updated data if successful, or an error message if failed.
+ */
 export async function updateLocation(code, newLocation) {
   try {
     const itemInformation = {
@@ -102,6 +130,15 @@ export async function updateLocation(code, newLocation) {
   }
 }
 
+/**
+ * Retrieves items by their location from the server.
+ *
+ * @async
+ * @function
+ * @param {string} location - The location identifier to search items by.
+ * @returns {Promise<{success: boolean, data?: any, message?: string}>}
+ * An object indicating the success status, the data if successful, or an error message if failed.
+ */
 export async function getItemByLocation(location) {
   try {
     const token = await getLocalData("token");
@@ -137,6 +174,14 @@ export async function getItemByLocation(location) {
   }
 }
 
+/**
+ * Fetches items that do not have an associated location from the server.
+ *
+ * @async
+ * @function getItemWithoutLocation
+ * @returns {Promise<{success: boolean, data?: any, message?: string}>}
+ *   An object indicating the success status, the data if successful, or an error message if failed.
+ */
 export async function getItemWithoutLocation() {
   try {
     const token = await getLocalData("token");

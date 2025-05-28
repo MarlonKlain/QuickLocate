@@ -1,5 +1,15 @@
 import { getLocalData } from "../localStorage/asyncStorage";
 
+/**
+ * Filters data from the server based on the provided filter, column, and sorter.
+ *
+ * @async
+ * @function
+ * @param {string} filter - The filter criteria to apply.
+ * @param {string} column - The column to filter or sort by.
+ * @param {string} sorter - The sorting order or criteria.
+ * @returns {Promise<{success: boolean, data?: any, message?: string}>} An object indicating success, filtered data if successful, or an error message.
+ */
 export async function filter(filter, column, sorter) {
   try {
     const token = await getLocalData("token");

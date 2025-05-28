@@ -1,5 +1,17 @@
+/**
+ * HistoryChange component renders a pressable row displaying the date of a change.
+ * When pressed, it navigates to a route based on the item's moved_at property,
+ * passing the moved_date and moved_at as route parameters.
+ *
+ * @component
+ * @param {Object} props
+ * @param {Object} props.item - The history change item.
+ * @param {string} props.item.moved_date - The date when the change occurred.
+ * @param {string} props.item.moved_at - The timestamp or path used for navigation.
+ * @returns {JSX.Element} The rendered HistoryChange component.
+ */
 import { router } from "expo-router";
-import { Pressable, Text, View, StyleSheet } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { styles } from "../../../styles/componentStyles/FlatListStyles/FlatListChildren/HistoryChange.style";
 
 export default function HistoryChange({ item }) {

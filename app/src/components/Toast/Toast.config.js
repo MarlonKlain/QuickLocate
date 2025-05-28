@@ -1,5 +1,13 @@
-// App.jsx
-import Toast, { BaseToast, ErrorToast } from "react-native-toast-message";
+/**
+ * Configuration object for customizing toast notifications using `react-native-toast-message`.
+ *
+ * @type {Object}
+ * @property {function(Object): JSX.Element} success - Custom renderer for 'success' toast type.
+ *   Uses the `BaseToast` component with a green border and custom text styles.
+ * @property {function(Object): JSX.Element} error - Custom renderer for 'error' toast type.
+ *   Uses the `ErrorToast` component with custom text styles for both title and message.
+ */
+import { BaseToast, ErrorToast } from "react-native-toast-message";
 
 /*
   1. Create the config

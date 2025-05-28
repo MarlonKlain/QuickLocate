@@ -1,3 +1,16 @@
+/**
+ * FlatListComponent is a reusable React Native component that displays a list of items
+ * using FlatList, with an optional header row and pull-to-refresh functionality.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} [props.header=true] - Whether to display the header row.
+ * @param {function} props.renderComponent - Function that renders each item in the list.
+ * @param {Array} props.data - Array of data items to display in the list.
+ * @param {Object} [props.props] - Additional props passed to the FlatList component.
+ *
+ * @returns {JSX.Element} The rendered FlatList with optional header.
+ */
 import { FlatList, View, Text } from "react-native";
 import { useState } from "react";
 import { styles } from "../../styles/componentStyles/FlatListStyles/FlatListComponent.style";

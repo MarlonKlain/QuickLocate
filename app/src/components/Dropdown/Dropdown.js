@@ -1,3 +1,14 @@
+/**
+ * DropdownComponent renders a customizable dropdown menu using react-native-element-dropdown.
+ *
+ * @component
+ * @param {Object[]} filters - Array of filter objects to display as dropdown options. Each object should have `label` and `value` properties.
+ * @param {string} label - Placeholder text to display when no option is selected.
+ * @param {function} onSendValue - Callback function called with the selected value when an option is chosen.
+ * @param {string|number} value - The currently selected value.
+ * @param {function} setValue - Function to update the selected value.
+ * @returns {JSX.Element} The rendered dropdown component.
+ */
 import { useState } from "react";
 import { View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
@@ -30,7 +41,7 @@ export default function DropdownComponent({
         value={value}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
-        onChange={item => {
+        onChange={(item) => {
           setValue(item.value);
           setIsFocus(false);
           onSendValue(item.value);

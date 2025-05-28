@@ -10,6 +10,15 @@ import { showToast } from "../../src/components/Toast/Toast";
 export default function History() {
   const [historyChange, setHistoryChange] = useState([]);
 
+  /**
+   * Asynchronously loads history change data and updates the state.
+   * Shows a toast notification if the request fails.
+   *
+   * @async
+   * @function loadData
+   * @returns {Promise<void>} Resolves when the data is loaded and state is updated.
+   * @throws {Error} Throws an error if data loading fails.
+   */
   const loadData = async () => {
     try {
       const response = await getHistoryChange();

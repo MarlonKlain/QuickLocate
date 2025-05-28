@@ -1,3 +1,12 @@
+/**
+ * Authenticates a user by sending their credentials to the server.
+ *
+ * @async
+ * @function loginService
+ * @param {string} username - The username of the user attempting to log in.
+ * @param {string} password - The password of the user.
+ * @returns {Promise<{success: boolean, data?: any, message?: string}>} An object indicating the success status, user data if successful, or an error message if failed.
+ */
 export async function loginService(username, password) {
   try {
     const userData = {
@@ -30,6 +39,16 @@ export async function loginService(username, password) {
   }
 }
 
+/**
+ * Registers a new user by sending user data to the server.
+ *
+ * @async
+ * @function registerService
+ * @param {Object} userData - The user data to register with (e.g., { username, password, email }).
+ * @returns {Promise<Object>} An object indicating the result of the registration:
+ *   - If successful: { success: true, data: result }
+ *   - If failed: { success: false, message: string }
+ */
 export async function registerService(userData) {
   try {
     const response = await fetch("http://localhost:3000/register", {
@@ -61,6 +80,15 @@ export async function registerService(userData) {
   }
 }
 
+/**
+ * Checks the validity of a client token by sending it to the server.
+ *
+ * @async
+ * @function checkClientToken
+ * @param {string} token - The client token to be validated.
+ * @returns {Promise<{success: boolean, data?: any, message?: string}>}
+ * An object indicating whether the token is valid. If invalid, includes an error message.
+ */
 export async function checkClientToken(token) {
   try {
     const response = await fetch("http://localhost:3000/check-token", {
