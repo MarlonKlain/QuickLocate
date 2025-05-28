@@ -1,3 +1,12 @@
+/**
+ * Registers location-related routes with the Fastify instance.
+ *
+ * @param {import('fastify').FastifyInstance} fastify - The Fastify server instance.
+ * @returns {Promise<void>} Resolves when the routes have been registered.
+ *
+ * @route GET /location - Retrieves all locations (requires authentication).
+ * @route GET /location/free - Retrieves free locations (requires authentication).
+ */
 import locationController from "../controllers/location.controller.js";
 import { auth } from "./middleware/authentication.js";
 

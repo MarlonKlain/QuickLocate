@@ -1,3 +1,15 @@
+/**
+ * Registers item-related routes with the Fastify instance.
+ *
+ * @param {import('fastify').FastifyInstance} fastify - The Fastify server instance.
+ * @returns {Promise<void>} Resolves when the routes are registered.
+ *
+ * @route GET /item - Retrieves all items and free locations. Requires authentication.
+ * @route GET /item/by-code/:code - Retrieves an item by its code. Requires authentication.
+ * @route GET /item/by-location/:location - Retrieves items by location. Requires authentication.
+ * @route PUT /item/update-location - Updates the location of an item. Requires authentication.
+ * @route GET /item/not-addressed - Retrieves items without a location. Requires authentication.
+ */
 import itemController from "../controllers/item.controller.js";
 import { auth } from "./middleware/authentication.js";
 

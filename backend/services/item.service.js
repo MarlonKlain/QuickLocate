@@ -2,6 +2,14 @@ import itemModel from "../models/item.model.js";
 import { sortArray } from "../utils/sorter.js";
 
 const itemService = {
+  /**
+   * Retrieves all items along with their associated free locations.
+   *
+   * @async
+   * @function
+   * @returns {Promise<Array>} A promise that resolves to an array of items and their free locations.
+   * @throws {Error} If there is an error retrieving the items and free locations.
+   */
   async getAllItemsAndFreeLocation() {
     try {
       const items = await itemModel.getAllItemsAndFreeLocation();
@@ -12,6 +20,14 @@ const itemService = {
       );
     }
   },
+  /**
+   * Retrieves item information and its change history by item code.
+   *
+   * @async
+   * @param {string} code - The unique code identifying the item.
+   * @returns {Promise<{itemInformation: Object, changeHistory: Array}>} An object containing the item's information and its change history.
+   * @throws {Error} If the code is not provided or if retrieval fails.
+   */
   async getItemByCode(code) {
     try {
       if (!code) {
@@ -30,6 +46,14 @@ const itemService = {
     }
   },
 
+  /**
+   * Retrieves and returns a sorted list of items for a given location.
+   *
+   * @async
+   * @param {string} location - The location to filter items by. Must be provided.
+   * @returns {Promise<Array<Object>>} A promise that resolves to an array of items sorted by location in ascending order.
+   * @throws {Error} If the location is not provided or if retrieval fails.
+   */
   async getItemsByLocation(location) {
     try {
       if (!location) {
@@ -45,6 +69,18 @@ const itemService = {
     }
   },
 
+  /**
+   * Updates the location of an item identified by its code.
+   *
+   * @async
+   * @param {string} code - The unique code identifying the item.
+   * @param {string} newLocation - The new location to assign to the item.
+   * @throws {Error} If the code is not provided.
+   * @throws {Error} If no item is found with the given code.
+   * @throws {Error} If the new location is the same as the current location.
+   * @throws {Error} If the update operation fails.
+   * @returns {Promise<void>} Resolves when the location is successfully updated.
+   */
   async updateLocation(code, newLocation) {
     try {
       if (!code) {
@@ -70,6 +106,14 @@ const itemService = {
     }
   },
 
+  /**
+   * Retrieves items that do not have an associated location.
+   *
+   * @async
+   * @function getItemWithoutLocation
+   * @returns {Promise<Array<Object>>} A promise that resolves to an array of items without location.
+   * @throws {Error} If retrieval fails, throws an error with a descriptive message.
+   */
   async getItemWithoutLocation() {
     try {
       const items = await itemModel.getItemWithoutLocation();

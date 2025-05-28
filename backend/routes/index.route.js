@@ -1,3 +1,10 @@
+/**
+ * Registers all application routes with the Fastify instance.
+ *
+ * @param {import('fastify').FastifyInstance} fastify - The Fastify server instance.
+ * @param {Object} opts - Additional options for route registration.
+ * @returns {Promise<void>} Resolves when all routes have been registered.
+ */
 import filterRoutes from "./filter.route.js";
 import historyRoutes from "./history.route.js";
 import itemRoutes from "./item.route.js";
