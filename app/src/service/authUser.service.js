@@ -1,3 +1,5 @@
+import { URL } from "../utils/url";
+
 /**
  * Authenticates a user by sending their credentials to the server.
  *
@@ -13,7 +15,7 @@ export async function loginService(username, password) {
       username,
       password,
     };
-    const response = await fetch("http://localhost:3000/login", {
+    const response = await fetch(URL + "/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +53,7 @@ export async function loginService(username, password) {
  */
 export async function registerService(userData) {
   try {
-    const response = await fetch("http://localhost:3000/register", {
+    const response = await fetch(URL + "/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -91,7 +93,7 @@ export async function registerService(userData) {
  */
 export async function checkClientToken(token) {
   try {
-    const response = await fetch("http://localhost:3000/check-token", {
+    const response = await fetch(URL + "/check-token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

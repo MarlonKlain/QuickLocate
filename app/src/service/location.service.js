@@ -1,5 +1,5 @@
 import { getLocalData } from "../localStorage/asyncStorage";
-
+import { URL } from "../utils/url";
 /**
  * Fetches all free locations from the server.
  *
@@ -13,7 +13,7 @@ import { getLocalData } from "../localStorage/asyncStorage";
 export async function getAllFreeLocations() {
   try {
     const token = await getLocalData("token");
-    const response = await fetch(`http://localhost:3000/location/free`, {
+    const response = await fetch(URL + `/location/free`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export async function getAllFreeLocations() {
 export async function getLocations() {
   try {
     const token = await getLocalData("token");
-    const response = await fetch(`http://localhost:3000/location`, {
+    const response = await fetch(URL + `/location`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

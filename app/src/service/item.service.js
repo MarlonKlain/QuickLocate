@@ -1,4 +1,5 @@
 import { getLocalData } from "../localStorage/asyncStorage";
+import { URL } from "../utils/url";
 
 /**
  * Fetches all items and available free locations from the server.
@@ -11,7 +12,7 @@ import { getLocalData } from "../localStorage/asyncStorage";
 export async function getAllItemsAndFreeLocation() {
   try {
     const token = await getLocalData("token");
-    const response = await fetch("http://localhost:3000/item", {
+    const response = await fetch(URL + "/item", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +54,7 @@ export async function getAllItemsAndFreeLocation() {
 export async function getItemByCode(code) {
   try {
     const token = await getLocalData("token");
-    const response = await fetch(`http://localhost:3000/item/by-code/${code}`, {
+    const response = await fetch(URL + `/item/by-code/${code}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -100,7 +101,7 @@ export async function updateLocation(code, newLocation) {
       newLocation,
     };
     const token = await getLocalData("token");
-    const response = await fetch(`http://localhost:3000/item/update-location`, {
+    const response = await fetch(URL + `/item/update-location`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -142,16 +143,13 @@ export async function updateLocation(code, newLocation) {
 export async function getItemByLocation(location) {
   try {
     const token = await getLocalData("token");
-    const response = await fetch(
-      `http://localhost:3000/item/by-location/${location}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch(URL + `/item/by-location/${location}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     const result = await response.json();
 
@@ -185,7 +183,7 @@ export async function getItemByLocation(location) {
 export async function getItemWithoutLocation() {
   try {
     const token = await getLocalData("token");
-    const response = await fetch(`http://localhost:3000/item/not-addressed`, {
+    const response = await fetch(URL + `/item/not-addressed`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

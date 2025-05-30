@@ -1,4 +1,5 @@
 import { getLocalData } from "../localStorage/asyncStorage";
+import { URL } from "../utils/url";
 
 /**
  * Fetches the change history from the server.
@@ -11,7 +12,7 @@ import { getLocalData } from "../localStorage/asyncStorage";
 export async function getHistoryChange() {
   try {
     const token = await getLocalData("token");
-    const response = await fetch(`http://localhost:3000/history`, {
+    const response = await fetch(URL + `/history`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -50,16 +51,13 @@ export async function getHistoryChange() {
 export async function getHistoryChangeByDate(date) {
   try {
     const token = await getLocalData("token");
-    const response = await fetch(
-      `http://localhost:3000/history/by-date/${date}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch(URL + `/history/by-date/${date}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     const result = await response.json();
 

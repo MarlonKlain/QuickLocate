@@ -1,4 +1,5 @@
 import { getLocalData } from "../localStorage/asyncStorage";
+import { URL } from "../utils/url";
 
 /**
  * Filters data from the server based on the provided filter, column, and sorter.
@@ -14,7 +15,7 @@ export async function filter(filter, column, sorter) {
   try {
     const token = await getLocalData("token");
     const response = await fetch(
-      `http://localhost:3000/filter?filter=${filter}&column=${column}&sorter=${sorter}`,
+      URL + `/filter?filter=${filter}&column=${column}&sorter=${sorter}`,
       {
         method: "GET",
         headers: {
