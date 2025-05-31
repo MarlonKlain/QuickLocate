@@ -10,8 +10,8 @@
  * @returns {JSX.Element} The rendered modal component.
  */
 import { Modal, View } from "react-native";
-import BackButton from "./BackButton";
-import { styles } from "../styles/componentStyles/ModalComponent.style";
+import BackButton from "../BackButton/BackButton";
+import { styles } from "./ModalComponent.style";
 
 export default function ModalComponent({ modalState, onClose, children }) {
   return (

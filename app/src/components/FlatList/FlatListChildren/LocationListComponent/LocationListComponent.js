@@ -11,7 +11,7 @@
  */
 import { Pressable, View, Text } from "react-native";
 import { router } from "expo-router";
-import { styles } from "../../../styles/componentStyles/FlatListStyles/FlatListChildren/LocationListComponent.style";
+import { styles } from "./LocationListComponent.style";
 
 export default function LocationListComponent({ item }) {
   return (

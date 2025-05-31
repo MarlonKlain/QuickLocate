@@ -9,8 +9,8 @@
  */
 import { View, Image, SafeAreaView } from "react-native";
 import { styles } from "../src/styles/screenStyles/homepage-index.style";
-import Button from "../src/components/Button";
-import LinkComponent from "../src/components/Link";
+import Button from "../src/components/Button/Button";
+import LinkComponent from "../src/components/Link/Link";
 
 export default function Index() {
   return (

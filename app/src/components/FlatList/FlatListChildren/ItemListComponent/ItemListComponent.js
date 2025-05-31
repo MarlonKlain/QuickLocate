@@ -14,7 +14,7 @@
  * @returns {JSX.Element} The rendered list item component.
  */
 import { Pressable, View, Text } from "react-native";
-import { styles } from "../../../styles/componentStyles/FlatListStyles/FlatListChildren/ItemListComponent.style";
+import { styles } from "./ItemListComponent.style";
 import { router } from "expo-router";
 
 export default function ItemListComponent({ item }) {

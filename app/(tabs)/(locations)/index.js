@@ -2,9 +2,9 @@ import { View, Text, SafeAreaView } from "react-native";
 import { useContext, useEffect, useState } from "react";
 import { styles } from "../../src/styles/screenStyles/location-index.style";
 import FlatListComponent from "../../src/components/FlatList/FlatListComponent";
-import LocationListComponent from "../../src/components/FlatList/FlatListChildren/LocationListComponent";
+import LocationListComponent from "../../src/components/FlatList/FlatListChildren/LocationListComponent/LocationListComponent";
 import { getLocations } from "../../src/service/location.service";
-import Button from "../../src/components/Button";
+import Button from "../../src/components/Button/Button";
 import { AuthContext } from "../../src/contexts/Auth.context";
 import { showToast } from "../../src/components/Toast/Toast";
 

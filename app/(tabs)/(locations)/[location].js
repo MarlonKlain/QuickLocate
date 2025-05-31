@@ -2,9 +2,9 @@ import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { View, Text, SafeAreaView } from "react-native";
 import { styles } from "../../src/styles/screenStyles/[location].style";
-import BackButton from "../../src/components/BackButton";
+import BackButton from "../../src/components/BackButton/BackButton";
 import FlatListComponent from "../../src/components/FlatList/FlatListComponent";
-import ItemListComponent from "../../src/components/FlatList/FlatListChildren/ItemListComponent";
+import ItemListComponent from "../../src/components/FlatList/FlatListChildren/ItemListComponent/ItemListComponent";
 import {
   getItemByLocation,
   getItemWithoutLocation,

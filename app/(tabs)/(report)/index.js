@@ -2,8 +2,8 @@ import FlatListComponent from "../../src/components/FlatList/FlatListComponent";
 import { useEffect, useState } from "react";
 import { getHistoryChange } from "../../src/service/history.service";
 import { SafeAreaView, View } from "react-native";
-import Button from "../../src/components/Button";
-import HistoryChange from "../../src/components/FlatList/FlatListChildren/HistoryChange";
+import Button from "../../src/components/Button/Button";
+import HistoryChange from "../../src/components/FlatList/FlatListChildren/HistoryChange/HistoryChange";
 import { styles } from "../../src/styles/screenStyles/report-index";
 import { showToast } from "../../src/components/Toast/Toast";
 

@@ -2,16 +2,16 @@ import { SafeAreaView, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useEffect, useState, useContext } from "react";
 import { styles } from "../../src/styles/screenStyles/item-index.style";
-import Input from "../../src/components/Input";
+import Input from "../../src/components/Input/Input";
 import { COLORS } from "../../src/utils/colors";
-import Button from "../../src/components/Button";
+import Button from "../../src/components/Button/Button";
 import DropdownComponent from "../../src/components/Dropdown/Dropdown";
 import FlatListComponent from "../../src/components/FlatList/FlatListComponent";
 import {
   filterOptions,
   sorterOptions,
 } from "../../src/components/Dropdown/filters";
-import ItemListComponent from "../../src/components/FlatList/FlatListChildren/ItemListComponent";
+import ItemListComponent from "../../src/components/FlatList/FlatListChildren/ItemListComponent/ItemListComponent";
 import { getAllItemsAndFreeLocation } from "../../src/service/item.service";
 import { filter } from "../../src/service/filter.service";
 import { AuthContext } from "../../src/contexts/Auth.context";

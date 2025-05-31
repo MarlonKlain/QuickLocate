@@ -9,8 +9,8 @@
  * @returns {JSX.Element} The rendered component showing the location and formatted date/time.
  */
 import { View, Text } from "react-native";
-import { styles } from "../../../styles/componentStyles/FlatListStyles/FlatListChildren/LocationHistoryComponent.style";
-import { formatTheHistoryWithTime } from "../../../utils/formatDate";
+import { styles } from "./LocationHistoryComponent.style";
+import { formatTheHistoryWithTime } from "../../../../utils/formatDate";
 
 export default function LocationHistoryComponent({ item }) {
   return (

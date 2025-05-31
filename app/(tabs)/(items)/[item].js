@@ -1,19 +1,19 @@
-import { View, Pressable, Alert, SafeAreaView } from "react-native";
+import { View, Pressable, SafeAreaView } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { FontAwesome } from "@expo/vector-icons";
 import { styles } from "../../src/styles/screenStyles/[item].style";
-import ModalComponent from "../../src/components/ModalComponent";
-import BackButton from "../../src/components/BackButton";
-import Input from "../../src/components/Input";
+import ModalComponent from "../../src/components/ModalComponent/ModalComponent";
+import BackButton from "../../src/components/BackButton/BackButton";
+import Input from "../../src/components/Input/Input";
 import FlatListComponent from "../../src/components/FlatList/FlatListComponent";
-import LocationHistoryComponent from "../../src/components/FlatList/FlatListChildren/LocationHistoryComponent";
-import Button from "../../src/components/Button";
+import LocationHistoryComponent from "../../src/components/FlatList/FlatListChildren/LocationHistoryComponent/LocationHistoryComponent";
+import Button from "../../src/components/Button/Button";
 import { COLORS } from "../../src/utils/colors";
 import { getItemByCode, updateLocation } from "../../src/service/item.service";
 import { getAllFreeLocations } from "../../src/service/location.service";
 import { showToast } from "../../src/components/Toast/Toast";
-import FreeLocationList from "../../src/components/FlatList/FlatListChildren/FreeLocationList";
+import FreeLocationList from "../../src/components/FlatList/FlatListChildren/FreeLocationList/FreeLocationList";
 
 export default function ItemDetails() {
   const [code, setCode] = useState("");

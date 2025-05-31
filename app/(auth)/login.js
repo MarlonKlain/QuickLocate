@@ -1,9 +1,9 @@
 import { Text, View, SafeAreaView } from "react-native";
 import { useState, useContext } from "react";
-import Input from "../src/components/Input";
+import Input from "../src/components/Input/Input";
 import { styles } from "../src/styles/screenStyles/login.style";
-import Button from "../src/components/Button";
-import LinkComponent from "../src/components/Link";
+import Button from "../src/components/Button/Button";
+import LinkComponent from "../src/components/Link/Link";
 import { AuthContext } from "../src/contexts/Auth.context";
 import { showToast } from "../src/components/Toast/Toast";
 

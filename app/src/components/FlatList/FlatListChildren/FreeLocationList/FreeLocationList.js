@@ -10,7 +10,7 @@
  * @returns {JSX.Element} The rendered component.
  */
 import { Pressable, Text, View } from "react-native";
-import { styles } from "../../../styles/componentStyles/FlatListStyles/FlatListChildren/FreeLocation.style";
+import { styles } from "./FreeLocation.style";
 
 export default function FreeLocationList({ item, setLocation, onClose }) {
   return (

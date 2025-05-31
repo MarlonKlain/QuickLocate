@@ -13,7 +13,7 @@
  */
 import { FlatList, View, Text } from "react-native";
 import { useState } from "react";
-import { styles } from "../../styles/componentStyles/FlatListStyles/FlatListComponent.style";
+import { styles } from "./FlatListComponent.style";
 
 export default function FlatListComponent({
   header = true,

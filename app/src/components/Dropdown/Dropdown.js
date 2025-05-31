@@ -12,7 +12,7 @@
 import { useState } from "react";
 import { View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
-import { styles } from "../../styles/componentStyles/Dropdown.style";
+import { styles } from "./Dropdown.style";
 
 export default function DropdownComponent({
   filters,

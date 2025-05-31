@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { COLORS } from "../../utils/colors";
 import { FONTS } from "../../utils/fonts";
-import { flatListCell } from "../componentStyles/shared/Flatlist.shared.style";
+import { flatListCell } from "../shared/Flatlist.shared.style";
 
 export const styles = StyleSheet.create({
   container: {

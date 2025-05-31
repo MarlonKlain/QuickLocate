@@ -11,9 +11,9 @@
  * @param {string|Date} props.item.moved_at - The date and time when the item was moved.
  * @returns {JSX.Element} The rendered component displaying the item's details.
  */
-import { View, Text, StyleSheet } from "react-native";
-import { styles } from "../../../styles/componentStyles/FlatListStyles/FlatListChildren/HistoryChangeByDateComponent.style";
-import { formatTheHistoryWithTime } from "../../../utils/formatDate";
+import { View, Text } from "react-native";
+import { styles } from "./HistoryChangeByDateComponent.style";
+import { formatTheHistoryWithTime } from "../../../../utils/formatDate";
 
 export default function HistoryChangeByDateComponent({ item }) {
   return (

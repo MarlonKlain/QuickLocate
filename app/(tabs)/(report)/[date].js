@@ -4,8 +4,8 @@ import { SafeAreaView, View } from "react-native";
 import { getHistoryChangeByDate } from "../../src/service/history.service";
 import { formatTheHistoryWithoutTime } from "../../src/utils/formatDate";
 import FlatListComponent from "../../src/components/FlatList/FlatListComponent";
-import HistoryChangeByDateComponent from "../../src/components/FlatList/FlatListChildren/HistoryChangeByDateComponent";
-import BackButton from "../../src/components/BackButton";
+import HistoryChangeByDateComponent from "../../src/components/FlatList/FlatListChildren/HistoryChangeByDateComponent/HistoryChangeByDateComponent";
+import BackButton from "../../src/components/BackButton/BackButton";
 import { styles } from "../../src/styles/screenStyles/[date]";
 import { showToast } from "../../src/components/Toast/Toast";
 export default function HistoryChangeByDate() {

@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 import { COLORS } from "../../utils/colors";
 import { FONTS } from "../../utils/fonts";
-import { logoutButtonStyle } from "../componentStyles/shared/LogoutButton.shared";
-import { containerStyle } from "../componentStyles/shared/Container.shared.styles";
+import { logoutButtonStyle } from "../shared/LogoutButton.shared";
+import { containerStyle } from "../shared/Container.shared.styles";
 
 export const styles = StyleSheet.create({
   container: {

@@ -10,7 +10,7 @@
  * @returns {JSX.Element} The rendered Button component.
  */
 import { Pressable, Text } from "react-native";
-import { styles } from "../styles/componentStyles/Button.style";
+import { styles } from "./Button.style";
 
 export default function Button({
   text,

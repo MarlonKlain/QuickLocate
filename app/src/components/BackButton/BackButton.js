@@ -9,8 +9,8 @@
  */
 import { Pressable, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { styles } from "../styles/componentStyles/BackButton.style";
-import { COLORS } from "../utils/colors";
+import { styles } from "./BackButton.style";
+import { COLORS } from "../../utils/colors";
 
 export default function BackButton({ onPress }) {
   return (

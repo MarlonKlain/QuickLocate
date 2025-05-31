@@ -12,7 +12,7 @@
  */
 import { router } from "expo-router";
 import { Pressable, Text, View } from "react-native";
-import { styles } from "../../../styles/componentStyles/FlatListStyles/FlatListChildren/HistoryChange.style";
+import { styles } from "./HistoryChange.style";
 
 export default function HistoryChange({ item }) {
   return (

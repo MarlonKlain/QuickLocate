@@ -12,7 +12,7 @@
  * @returns {JSX.Element} The rendered Input component.
  */
 import { Text, TextInput, View } from "react-native";
-import { styles } from "../styles/componentStyles/Input.style";
+import { styles } from "./Input.style";
 
 export default function Input({
   label,
