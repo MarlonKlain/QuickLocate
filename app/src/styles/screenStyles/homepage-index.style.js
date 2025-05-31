@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { hr, isWeb, wr } from "../../utils/sizes";
 
 export const styles = StyleSheet.create({
   welcomeContainer: {
@@ -8,9 +9,8 @@ export const styles = StyleSheet.create({
   },
   quickLocateImg: {
     resizeMode: "center",
-    width: 352,
-    height: 400,
-    marginTop: 50,
-    marginBottom: 50,
+    width: wr("90%"),
+    height: hr("60%"),
+    marginVertical: isWeb() ? hr("3%") : hr("1%"),
   },
 });
