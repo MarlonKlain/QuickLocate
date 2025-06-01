@@ -172,6 +172,7 @@ export default function Items() {
           {/* Reset all filters to default */}
           <Button
             text={"Reset Filters"}
+            disableDefaultStyle={true}
             additionalButtonStyle={styles.cleanFilter}
             additionalTextStyle={styles.resetFilterText}
             onPress={() => cleanFilters()}

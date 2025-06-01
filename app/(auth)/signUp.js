@@ -64,16 +64,15 @@ export default function signUp() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.outsideTextContainer}>
-        <Text style={styles.outsideText}>Fill in all the</Text>
-        <Text style={styles.outsideText}>fields</Text>
-      </View>
-
       <ScrollView
         contentContainerStyle={styles.scrollContent}
-        style={styles.scrollView}
         showsVerticalScrollIndicator={false}
       >
+        <View style={styles.headerContainer}>
+          <Text style={styles.headerText}>Fill in all the</Text>
+          <Text style={styles.headerText}>fields</Text>
+        </View>
+
         <View style={styles.infosContainer}>
           <View style={styles.buttonsContainer}>
             <View>

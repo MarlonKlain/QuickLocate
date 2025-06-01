@@ -137,6 +137,7 @@ export default function ItemDetails() {
   }
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <BackButton onPress={router.back} />
       <View style={styles.container}>
         {/* Modal showing all available free locations */}
         <ModalComponent modalState={isModalVisible} onClose={closeModal}>
@@ -153,7 +154,6 @@ export default function ItemDetails() {
           ></FlatListComponent>
         </ModalComponent>
         {/* Item information (read-only except location field) */}
-        <BackButton onPress={router.back} />
         <Input
           value={code}
           additionalTextStyle={styles.inputLabelText}

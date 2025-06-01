@@ -5,13 +5,14 @@ import { hr, isWeb, wr } from "../../utils/sizes";
 
 export const styles = StyleSheet.create({
   button: {
-    marginBottom: isWeb() ? "8%" : "4%",
+    marginBottom: isWeb() ? hr("2%") : hr("1.5%"),
+    marginTop: isWeb() ? hr("1%") : hr("0.5%"),
     backgroundColor: COLORS.primary,
     borderRadius: 8,
     width: isWeb() ? wr("15%") : wr("50%"),
     height: isWeb() ? hr("7%") : hr("8%"),
     justifyContent: "center",
-    marginHorizontal: "2%",
+    marginHorizontal: wr("2%"),
   },
   buttonText: {
     textAlign: "center",
