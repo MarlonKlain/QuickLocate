@@ -4,18 +4,19 @@ import { isWeb, wr, hr } from "../../utils/sizes";
 
 export const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: COLORS.background,
-    width: isWeb() ? wr("95%") : wr("90%"),
     alignItems: "center",
   },
 
   infoContainer: {
-    width: wr("95%"),
+    width: isWeb() ? wr("95%") : wr("90%"),
     height: hr("90%"),
+    alignItems: "center",
   },
 
   buttonContainer: {
-    width: wr("90%"),
+    width: isWeb() ? wr("95%") : wr("90%"),
     flexDirection: "row",
     justifyContent: "center",
   },

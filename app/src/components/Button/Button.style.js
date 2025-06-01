@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     marginBottom: isWeb() ? hr("2%") : hr("1.5%"),
     marginTop: isWeb() ? hr("1%") : hr("0.5%"),
     backgroundColor: COLORS.primary,
-    borderRadius: 8,
+    borderRadius: 7,
     width: isWeb() ? wr("15%") : wr("50%"),
     height: isWeb() ? hr("7%") : hr("8%"),
     justifyContent: "center",

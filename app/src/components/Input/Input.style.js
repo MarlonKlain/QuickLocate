@@ -5,13 +5,14 @@ import { wr, hr, isWeb } from "../../utils/sizes";
 
 export const styles = StyleSheet.create({
   inputField: {
-    backgroundColor: COLORS.background,
+    backgroundColor: COLORS.backgroundContrast,
     width: wr("85%"),
     height: hr("6.5%"),
     marginBottom: isWeb ? hr("2%") : hr("1%"),
     borderRadius: 10,
     borderWidth: 0.5,
     borderColor: COLORS.border,
+    paddingHorizontal: isWeb ? hr("1%") : hr("0.5%"),
   },
   textInput: {
     fontSize: hr("2.5%"),
