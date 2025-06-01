@@ -29,6 +29,7 @@ Throughout this project, I practiced and learned:
 - ⚙️ Connecting a mobile app to a custom backend using RESTful APIs
 - 📱 Managing state and persistent local storage in React Native
 - 🗃️ Designing endpoints and data models based on real-world use cases
+- 💻📱Responsive layout optimized for various screen sizes
 
 ---
 
@@ -42,7 +43,7 @@ Throughout this project, I practiced and learned:
   - Part number
   - Description
   - Location
-- 📍 Update the physical location of an item
+- 📍 Update the location of an item
 - 🕓 View item **location change history** with timestamps
 
 ### 🛡️ Authentication
