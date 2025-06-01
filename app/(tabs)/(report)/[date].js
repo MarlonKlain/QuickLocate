@@ -44,8 +44,8 @@ export default function HistoryChangeByDate() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <BackButton onPress={router.back} />
       <View style={styles.container}>
-        <BackButton onPress={router.back} />
         <FlatListComponent
           data={historyChangeByDate}
           header={false}

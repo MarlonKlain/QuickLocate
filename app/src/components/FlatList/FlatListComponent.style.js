@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
     paddingVertical: isWeb() ? hr("1.5%") : hr("2%"),
     borderRadius: 7,
+    marginBottom: "0.5%",
   },
   headerText: {
     flex: 1,

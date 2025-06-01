@@ -1,10 +1,12 @@
 import { StyleSheet } from "react-native";
 import { COLORS } from "../../utils/colors";
 import { FONTS } from "../../utils/fonts";
+import { isWeb, hr, wr } from "../../utils/sizes";
 
 export const flatListCell = StyleSheet.create({
   row: {
-    padding: 15,
+    width: isWeb() ? wr("95%") : wr("90%"),
+    height: isWeb() ? wr("3%") : wr("10%"),
     backgroundColor: COLORS.backgroundContrast,
     marginVertical: 5,
     borderRadius: 7,
@@ -13,11 +15,9 @@ export const flatListCell = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    textAlign: "center",
     fontFamily: FONTS.regular,
     fontSize: FONTS.textSize,
     color: COLORS.textSecondaryColor,
-    flex: 1,
   },
   freeLocation: {
     flex: 1,

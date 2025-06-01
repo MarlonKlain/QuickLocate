@@ -59,13 +59,13 @@ export default function ItemsByLocationScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <BackButton onPress={router.back} />
       <View style={styles.container}>
-        <BackButton onPress={router.back} />
         <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>Lista de items da localização:</Text>
+          <Text style={styles.headerText}>List of all locations:</Text>
           <Text style={styles.headerText}>{location}</Text>
         </View>
-        <View style={styles.itemsList}>
+        <View style={styles.itemsListContainer}>
           <FlatListComponent
             data={itemsByLocation}
             renderComponent={({ item }) => <ItemListComponent item={item} />}

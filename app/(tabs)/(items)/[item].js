@@ -172,7 +172,9 @@ export default function ItemDetails() {
           label={"Description"}
           disabled
         ></Input>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View
+          style={{ flexDirection: "row", alignItems: "center", width: "85%" }}
+        >
           <Input
             value={location}
             autoCapitalize="characters"

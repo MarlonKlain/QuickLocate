@@ -8,6 +8,8 @@ export const styles = StyleSheet.create({
   },
   text: {
     ...flatListCell.text,
+    textAlign: "center",
+    flex: 1,
   },
   freeLocation: {
     ...flatListCell.freeLocation,

@@ -40,7 +40,7 @@ export default function Locations() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.productContainer}>
+      <View style={styles.locationContainer}>
         <Button
           text={"LOGOUT"}
           onPress={() => logout()}

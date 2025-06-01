@@ -2,17 +2,13 @@ import { StyleSheet } from "react-native";
 import { COLORS } from "../../utils/colors";
 import { FONTS } from "../../utils/fonts";
 import { logoutButtonStyle } from "../shared/LogoutButton.shared";
+import { hr, isWeb, wr } from "../../utils/sizes";
 
 export const styles = StyleSheet.create({
-  productContainer: {
-    paddingHorizontal: 40,
+  locationContainer: {
     flex: 1,
-    width: "100%",
     backgroundColor: COLORS.background,
-  },
-  addLocationContainer: {
-    flex: 0.1,
-    justifyContent: "center",
+    alignItems: "center",
   },
 
   locationsTitleText: {
@@ -20,13 +16,14 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
     textAlign: "center",
     fontSize: FONTS.headerSize,
-    paddingVertical: 10,
     fontFamily: FONTS.bold,
-    borderRadius: 12,
+    borderRadius: 7,
+    paddingVertical: isWeb() ? hr("1.5%") : hr("2%"),
   },
+
   locationsTitleTextContainer: {
-    width: "100%",
-    marginBottom: 10,
+    width: isWeb() ? wr("95%") : wr("90%"),
+    marginBottom: hr("0.5%"),
   },
   row: {
     justifyContent: "space-between",
@@ -35,6 +32,7 @@ export const styles = StyleSheet.create({
   logoutButton: {
     ...logoutButtonStyle.logoutButton,
   },
+
   logoutButtonText: {
     fontSize: FONTS.textSize,
   },

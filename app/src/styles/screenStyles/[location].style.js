@@ -6,46 +6,41 @@ import { flatListCell } from "../shared/Flatlist.shared.style";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
     backgroundColor: COLORS.background,
+    alignItems: "center",
   },
+
   headerContainer: {
-    flex: 0.15,
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: "1%",
   },
+
   headerText: {
     fontFamily: FONTS.bold,
     fontSize: FONTS.headerSize,
   },
-  itemsList: {
-    flex: 1,
-    width: "100%",
-  },
+
   itemsListHeaderContainer: {
     backgroundColor: COLORS.primary,
     flexDirection: "row",
     justifyContent: "center",
-    borderRadius: 5,
-    padding: 5,
-    width: "100%",
+    borderRadius: 7,
   },
-  itemsListHeaderText: {
-    width: "25%",
-    color: COLORS.textPrimaryColor,
-    fontFamily: FONTS.bold,
-    paddingVertical: 10,
-    fontSize: FONTS.titleSize,
-    textAlign: "center",
+
+  itemsListContainer: {
+    flex: 1,
   },
+
   row: {
     ...flatListCell.row,
     flexDirection: "row",
   },
+
   cell: {
     ...flatListCell.row,
   },
+
   freeLocation: {
     ...flatListCell.freeLocation,
   },
