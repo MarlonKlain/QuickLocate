@@ -7,7 +7,7 @@ export const flatListCell = StyleSheet.create({
     padding: 15,
     backgroundColor: COLORS.backgroundContrast,
     marginVertical: 5,
-    borderRadius: 8,
+    borderRadius: 7,
     borderWidth: 1,
     borderColor: COLORS.border,
     alignItems: "center",
@@ -15,7 +15,7 @@ export const flatListCell = StyleSheet.create({
   text: {
     textAlign: "center",
     fontFamily: FONTS.regular,
-    fontSize: FONTS.titleSize,
+    fontSize: FONTS.textSize,
     color: COLORS.textSecondaryColor,
     flex: 1,
   },
@@ -25,7 +25,7 @@ export const flatListCell = StyleSheet.create({
     height: 20,
     backgroundColor: COLORS.positive,
     alignSelf: "center",
-    borderRadius: 4,
+    borderRadius: 7,
     marginLeft: 5,
   },
 });

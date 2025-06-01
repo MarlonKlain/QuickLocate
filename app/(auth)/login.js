@@ -41,7 +41,7 @@ export default function Login() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
       <View style={styles.welcomeContainer}>
         <Text style={styles.welcomeText}>Welcome</Text>
       </View>
@@ -68,7 +68,7 @@ export default function Login() {
             <Text style={styles.alreadyHaveAccount}>
               Already have an account?
             </Text>
-            <LinkComponent href="signUp">
+            <LinkComponent href="signup">
               <Button
                 text="Sign Up"
                 additionalButtonStyle={styles.signUpButton}

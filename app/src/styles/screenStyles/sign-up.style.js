@@ -1,76 +1,72 @@
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 import { COLORS } from "../../utils/colors";
 import { FONTS } from "../../utils/fonts";
+import { isWeb, hr, wr } from "../../utils/sizes";
 
 export const styles = StyleSheet.create({
-  alreadyHaveAccount: {
-    color: COLORS.textPrimaryColor,
-    fontFamily: FONTS.bold,
-    fontSize: 14,
-    marginBottom: 5,
-    textAlign: "center",
-  },
-  buttonsContainer: {
-    alignItems: "flex-end",
-    flexDirection: "row",
-    justifyContent: "center",
-    marginTop: 10,
-  },
   container: {
     flex: 1,
   },
-  infosContainer: {
-    backgroundColor: COLORS.primary,
-    borderTopLeftRadius: 70,
-    borderTopRightRadius: 70,
-    paddingTop: 15,
-    paddingBottom: 40,
-    flexGrow: 1,
-    minHeight: "100%",
-  },
-  scrollView: {
-    flex: 1,
-    ...Platform.select({
-      web: {
-        overflowX: "hidden",
-      },
-    }),
-  },
-  scrollContent: {
-    flexGrow: 1,
-  },
-  inputContainer: {
-    flex: 1,
-    marginTop: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
 
-  outsideText: {
-    color: COLORS.primary,
+  alreadyHaveAccount: {
+    color: COLORS.textPrimaryColor,
     fontFamily: FONTS.bold,
-    fontSize: 48,
+    fontSize: isWeb() ? hr("2%") : hr("5%"),
     textAlign: "center",
   },
-  outsideTextContainer: {
+
+  buttonsContainer: {
+    width: wr("100%"),
+    alignItems: "flex-end",
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: hr("1%"),
+  },
+
+  infosContainer: {
+    backgroundColor: COLORS.primary,
+    width: wr("100%"),
+    height: hr("100%"),
+    borderTopLeftRadius: 70,
+    borderTopRightRadius: 70,
+    paddingVertical: isWeb() ? hr("2%") : hr("5%"),
+    alignItems: "center",
+  },
+
+  inputContainer: {
+    flex: 1,
+    marginTop: isWeb() ? hr("3%") : hr("3%"),
+  },
+
+  headerText: {
+    color: COLORS.primary,
+    fontFamily: FONTS.bold,
+    fontSize: isWeb() ? hr("8%") : hr("8%"),
+    textAlign: "center",
+  },
+
+  headerContainer: {
+    height: hr("20%"),
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 20,
     backgroundColor: COLORS.background,
+    marginVertical: isWeb() ? hr("3%") : hr("6%"),
   },
+
   alreadyHaveAccount: {
     textAlign: "center",
     color: COLORS.textPrimaryColor,
     fontFamily: FONTS.bold,
     fontSize: FONTS.titleSize,
-    marginBottom: 5,
   },
+
   loginButton: {
     backgroundColor: COLORS.secondary,
-    width: 150,
+    width: isWeb() ? wr("10%") : wr("40%"),
   },
+
   signUpButton: {
     backgroundColor: COLORS.positive,
-    width: 150,
+    width: isWeb() ? wr("10%") : wr("40%"),
   },
 });
